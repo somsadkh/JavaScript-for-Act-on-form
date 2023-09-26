@@ -1,0 +1,56 @@
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K2JN4W5');</script>
+    <!-- End Google Tag Manager -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    
+    <script>
+        /* Set core variables */
+        const elTriggerPopup1 = document.querySelector('[href="#popup1"]')
+        const elPopup1 = document.getElementById('popup1')
+        const elClosePopup1 = elPopup1.getElementsByClassName('close')[0]
+    
+        const elTriggerPopup2 = document.querySelector('[href="#popup2"]')
+        const elPopup2 = document.getElementById('popup2')
+        const elClosePopup2 = elPopup2.getElementsByClassName('close')[0]
+    
+        const elTriggerPopup3 = document.querySelector('[href="#popup3"]')
+        const elPopup3 = document.getElementById('popup3')
+        const elClosePopup3 = elPopup3.getElementsByClassName('close')[0]
+    
+        // Patch Show/Hide Functions
+        const patchShow1 = () => { elPopup1.style.display = 'block' }
+        const patchShow2 = () => { elPopup2.style.display = 'block' }
+        const patchShow3 = () => { elPopup3.style.display = 'block' }
+    
+        const patchHide1 = () => { elPopup1.style.display = 'none' }
+        const patchHide2 = () => { elPopup2.style.display = 'none' }
+        const patchHide3 = () => { elPopup3.style.display = 'none' }
+    
+        // Attach Show Handlers
+        elTriggerPopup1.addEventListener('click', patchShow1, false)
+        elTriggerPopup2.addEventListener('click', patchShow2, false)
+        elTriggerPopup3.addEventListener('click', patchShow3, false)
+    
+        // Attach Hide Handlers
+        elClosePopup1.addEventListener('click', patchHide1, false)
+        elClosePopup2.addEventListener('click', patchHide2, false)
+        elClosePopup3.addEventListener('click', patchHide3, false)
+    </script>
+<script>
+$(".table-trending .fa-thumbs-down").click(function(){
+	// $("#b1695214385005").remove()
+    $("#b1695214244627").remove()
+	var element = document.createElement("input");
+	element.type = "hidden";
+	element.name = "Line Item Reject";
+	element.id = "b1695214244627";
+	element.value=$(this).parents("td").attr('value')
+	document.getElementById("ao-form-f20b3824-1f32-49a4-9aa3-628cc8b95c5c").appendChild(element); 
+})
+</script>
