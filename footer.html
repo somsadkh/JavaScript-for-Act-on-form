@@ -1,0 +1,82 @@
+<!-- Video Scripts -->
+<script type="text/javascript">
+    document.onreadystatechange = function () {
+        if (document.readyState === "interactive") {
+
+            const getPlayerDataLs = (popupId) => {
+                const data = {}
+
+                data.playerType = document.getElementById(popupId).querySelector('iframe') ? 'iframe' : 'kaltura'
+                if (data.playerType === 'iframe') {
+                    data.playerSrc = document.getElementById(popupId).querySelector('iframe').src
+                } else {
+                    data.playerSrc = ''
+                }
+
+                return data
+            }
+
+            const playerDataLs = {
+                popop1: getPlayerDataLs('popup1'),
+                popup2: getPlayerDataLs('popup2'),
+                popup3: getPlayerDataLs('popup3'),
+                popup4: getPlayerDataLs('popup4'),
+                popup5: getPlayerDataLs('popup5'),
+                popup6: getPlayerDataLs('popup6'),
+            }
+
+            const handleCloseLs = (popupId) => {
+                const popup = document.getElementById(popupId)
+
+                if (playerDataLs[popupId].playerType === 'iframe') {
+                    popup.querySelector('iframe').src = ''
+                } else if (playerDataLs[popupId].playerType === 'kaltura') {
+                    kalturaPlayer.pause()
+                    popup.getElementsByClassName('kaltura-player-container')[0].style.display = 'none'
+                }
+            }
+
+            const handleOpenLs = (popupId) => {
+                const popup = document.getElementById(popupId)
+
+                if (playerDataLs[popupId].playerType === 'iframe') {
+                    popup.querySelector('iframe').src = playerDataLs[popupId].playerSrc
+                } else if (playerDataLs[popupId].playerType === 'kaltura') {
+                    popup.getElementsByClassName('kaltura-player-container')[0].style.display = 'block'
+                }
+            }
+
+            document.querySelector('[href="#popup1"]').addEventListener('click', () => handleOpenLs('popup1'), false)
+            document.querySelector('[href="#popup2"]').addEventListener('click', () => handleOpenLs('popup2'), false)
+            document.querySelector('[href="#popup3"]').addEventListener('click', () => handleOpenLs('popup3'), false)
+            document.querySelector('[href="#popup4"]').addEventListener('click', () => handleOpenLs('popup4'), false)
+            document.querySelector('[href="#popup5"]').addEventListener('click', () => handleOpenLs('popup5'), false)
+            document.querySelector('[href="#popup6"]').addEventListener('click', () => handleOpenLs('popup6'), false)
+
+            document.getElementById('popup1').getElementsByClassName('close')[0].addEventListener('click', () => handleCloseLs('popup1'), false)
+            document.getElementById('popup2').getElementsByClassName('close')[0].addEventListener('click', () => handleCloseLs('popup2'), false)
+            document.getElementById('popup3').getElementsByClassName('close')[0].addEventListener('click', () => handleCloseLs('popup3'), false)
+            document.getElementById('popup4').getElementsByClassName('close')[0].addEventListener('click', () => handleCloseLs('popup4'), false)
+            document.getElementById('popup5').getElementsByClassName('close')[0].addEventListener('click', () => handleCloseLs('popup5'), false)
+            document.getElementById('popup6').getElementsByClassName('close')[0].addEventListener('click', () => handleCloseLs('popup6'), false)
+
+
+        }
+    }
+
+</script>
+<script>
+    $(".table-trending .fa-thumbs-down").click(function () {
+        // $("#b1695214385005").remove()
+        $("#b1695214385005").val('')
+        $("#b1695214244627").val($(this).parents("td").attr('value'))
+    })
+
+    $(".table-trending .fa-thumbs-up").click(function () {
+        // $("#b1695214244627").remove()
+        $("#b1695214244627").val('')
+        $("#b1695214385005").val($(this).parents("td").attr('value'));
+
+        $('#ao-form-f20b3824-1f32-49a4-9aa3-628cc8b95c5c').submit();
+    })
+</script>
