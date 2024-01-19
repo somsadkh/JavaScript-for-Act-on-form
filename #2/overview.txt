@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 What to do: Disable(Overwite) scrollTo function from an external JS
 
+=======
+What to do: Disable(Overwite) scrollTo function from an external JS
+
+>>>>>>> 71c23d750ceb7ede271dce66b9c1deec4f952e15
 https://go.segra.com/acton/fs/blocks/showLandingPage/a/41772/p/p-0311/t/page/fm/0
