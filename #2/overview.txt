@@ -1,0 +1,3 @@
+What to do: Disable(Overwite) scrollTo function from an external JS
+
+https://go.segra.com/acton/fs/blocks/showLandingPage/a/41772/p/p-0311/t/page/fm/0
